@@ -24,14 +24,19 @@
     
     <!-- Logo + Nombre -->
     <div class="d-flex align-items-center">
-      <a href="index.html"><img src="images/logo.jpg" alt="Logo Auruma" style="height: 36px;" class="me-2" /></a>
-      <a style="text-decoration: none;" href="index.html"><span class="fs-5 fw-bold text-dark" style="font-family: 'Playfair Display', serif;">AURUMA</span></a>
+      <img src="images/logo.jpg" alt="Logo Auruma" style="height: 36px;" class="me-2" />
+      <span class="fs-5 fw-bold text-dark" style="font-family: 'Playfair Display', serif;">AURUMA</span>
     </div>
 
+    <!-- Botón hamburguesa -->
+    <button class="d-lg-none btn btn-outline-dark" id="menu-toggle" aria-label="Abrir menú">
+      ☰
+    </button>
+
     <!-- Navegación -->
-    <ul class="nav">
+    <ul class="nav" id="navbarMenu">
       <li class="nav-item">
-        <a class="nav-link text-dark fw-semibold" href="index.html">Inicio</a>
+        <a class="nav-link text-dark fw-semibold" href="index.html#inicio">Inicio</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-dark fw-semibold" href="index.html#quienes-somos">Quiénes Somos</a>
@@ -40,7 +45,7 @@
         <a class="nav-link text-dark fw-semibold" href="index.html#servicios">Servicios</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-dark fw-semibold" href="#productos">Productos</a>
+        <a class="nav-link text-dark fw-semibold" href="productos.html">Productos</a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-dark fw-semibold" href="index.html#reseñas">Reseñas</a>
@@ -272,5 +277,6 @@
   </div>
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
