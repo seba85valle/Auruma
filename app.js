@@ -18,3 +18,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+function abrirSubtarjeta(event, salida, corazon, fondo) {
+  event.preventDefault();
+  document.getElementById('subtarjeta-salida').innerHTML = `<strong>Salida:</strong> ${salida}`;
+  document.getElementById('subtarjeta-corazon').innerHTML = `<strong>Corazón:</strong> ${corazon}`;
+  document.getElementById('subtarjeta-fondo').innerHTML = `<strong>Fondo:</strong> ${fondo}`;
+  document.getElementById('subtarjeta-overlay').classList.remove('d-none');
+}
+
+function cerrarSubtarjeta() {
+  document.getElementById('subtarjeta-overlay').classList.add('d-none');
+}
+
