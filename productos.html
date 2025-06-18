@@ -22,10 +22,18 @@
 <header class="bg-white border-bottom px-3 py-2">
   <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap">
     
-    <!-- Logo + Nombre -->
+    <!-- Logo + Nombre + Carrito -->
     <div class="d-flex align-items-center">
       <img src="images/logo.jpg" alt="Logo Auruma" style="height: 36px;" class="me-2" />
-      <span class="fs-5 fw-bold text-dark" style="font-family: 'Playfair Display', serif;">AURUMA</span>
+      <span class="fs-5 fw-bold text-dark me-3" style="font-family: 'Playfair Display', serif;">AURUMA</span>
+      
+      <!-- Icono del carrito -->
+      <a href="carrito.html" class="position-relative">
+        <i class="bi bi-cart3 fs-4 text-dark"></i>
+        <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          0
+        </span>
+      </a>
     </div>
 
     <!-- Botón hamburguesa -->
@@ -74,21 +82,24 @@
 <!-- SECCIÓN FRAGANCIAS REGULARES -->
 <section id="fragancias-regulares" class="py-5">
   <div class="container">
-    <!-- Fragancias Femeninas -->
     <h2 id="fragancias-femeninas" class="text-center mb-4 titulo-seccion">Fragancias Regulares - Femeninas</h2>
     <div class="d-flex flex-wrap justify-content-center gap-4">
       <div class="card" style="width: 18rem;">
         <img src="images-productos/shine.jpeg" class="card-img-top" alt="Shine Blue">
-        <div class="card-body">
+        <div class="card-body d-flex flex-column">
           <h5 class="card-title">Shine Blue</h5>
-          <p class="card-text">
-            Salida: manzana, cedro, campanilla y limón siciliano.<br>
-            Corazón: rosa, bambú y jazmín.<br>
-            Fondo: ámbar, almizcle y cedro.<br>
+          <p class="card-text mb-3">
             100ml<br>
             <strong>$26000</strong>
           </p>
-          <a href="#" class="btn btn-light text-dark border">Agregar al carrito</a>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-outline-dark btn-sm flex-fill me-1"
+              onclick="abrirSubtarjeta(event, 
+                'manzana, cedro, campanilla y limón siciliano', 
+                'rosa blanca, bambú y jazmín', 
+                'ámbar, almizcle y cedro')">Ver detalles</a>
+            <a href="carrito.html" onclick="agregarShine()" class="btn btn-outline-dark btn-sm flex-fill ms-1">Agregar al carrito</a>
+          </div>
         </div>
       </div>
       <div class="card" style="width: 18rem;">
@@ -96,13 +107,17 @@
         <div class="card-body">
           <h5 class="card-title">Oh My God</h5>
           <p class="card-text">
-            Salida: pimienta, pomelo, pera.<br>
-            Corazón: rosa, azahar, jazmin, iris.<br>
-            Fondo: vainilla, azucar negra, habas de tonka, patchouly.<br>
             100ml<br>
             <strong>$26000</strong>
           </p>
-          <a href="#" class="btn btn-light text-dark border">Agregar al carrito</a>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-outline-dark btn-sm flex-fill me-1"
+              onclick="abrirSubtarjeta(event, 
+                'pimienta, pomelo, pera', 
+                'rosa, azahar, jazmin, iris', 
+                'vainilla, azucar negra, habas de tonka, patchouly')">Ver detalles</a>
+            <a href="carrito.html" onclick="agregarOhMyGod()" class="btn btn-outline-dark btn-sm flex-fill ms-1">Agregar al carrito</a>
+          </div>
         </div>
       </div>
       <div class="card" style="width: 18rem;">
@@ -110,13 +125,17 @@
         <div class="card-body">
           <h5 class="card-title">Oh Darling</h5>
           <p class="card-text">
-            Salida: almendra, café, bergamota.<br>
-            Corazón: nardos, raíz de lirio..<br>
-            Fondo: haba tonka, cacao, vainilla, sándalo, ámbar, canela y cedro<br>
             100ml<br>
             <strong>$26000</strong>
           </p>
-          <a href="#" class="btn btn-light text-dark border">Agregar al carrito</a>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-outline-dark btn-sm flex-fill me-1"
+              onclick="abrirSubtarjeta(event, 
+                'almendra, café, bergamota y limón (lima ácida)', 
+                'nardos, jazmín sambac, flor de azahar del naranjo, raíz de lirio y rosa de Bulgaria.', 
+                'haba tonka, cacao, vainilla, praliné, sándalo, almizcle, ámbar, madera de cachemira, canela, pachulí y cedro')">Ver detalles</a>
+            <a href="carrito.html" class="btn btn-outline-dark btn-sm flex-fill ms-1">Agregar al carrito</a>
+          </div>
         </div>
       </div>
       <div class="card" style="width: 18rem;">
@@ -124,13 +143,17 @@
         <div class="card-body">
           <h5 class="card-title">She</h5>
           <p class="card-text">
-            Salida: jazmin, muguet, ciclamen.<br>
-            Corazón: menta, apolvado, amber gris, vainilla.<br>
-            Fondo: musk, heliotropo, crema.<br>
             100ml<br>
             <strong>$26000</strong>
           </p>
-          <a href="#" class="btn btn-light text-dark border">Agregar al carrito</a>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-outline-dark btn-sm flex-fill me-1"
+              onclick="abrirSubtarjeta(event, 
+                'jazmin, muguet, ciclamen, ambrette', 
+                'menta, apolvado, amber gris, vainilla', 
+                'musk, heliotropo, crema')">Ver detalles</a>
+            <a href="carrito.html" class="btn btn-outline-dark btn-sm flex-fill ms-1">Agregar al carrito</a>
+          </div>
         </div>
       </div>
       <div class="card" style="width: 18rem;">
@@ -138,16 +161,23 @@
         <div class="card-body">
           <h5 class="card-title">María</h5>
           <p class="card-text">
-            Salida: mandarina, bergamota.<br>
-            Corazón: jazmin, damascencia.<br>
-            FONDO :patchouly, vetiver, almizcle.<br>
             100ml<br>
             <strong>$26000</strong>
           </p>
-          <a href="#" class="btn btn-light text-dark border">Agregar al carrito</a>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-outline-dark btn-sm flex-fill me-1"
+              onclick="abrirSubtarjeta(event, 
+                'mandarina, naranja, notas verdes, bergamota', 
+                'jazmin, damascencia, cashmeran, petigrain', 
+                'patchouly, vetiver, almizcle blanco, madera clara')">Ver detalles</a>
+            <a href="carrito.html" class="btn btn-outline-dark btn-sm flex-fill ms-1">Agregar al carrito</a>
+          </div>
         </div>
       </div>
-    </div>
+    </div> 
+  </div>
+</section>
+
     <!-- Fragancias Masculinas -->
     <h2 id="fragancias-masculinas" class="text-center my-5 titulo-seccion">Fragancias Regulares - Masculinas</h2>
     <div class="d-flex flex-wrap justify-content-center gap-4">
@@ -156,13 +186,17 @@
         <div class="card-body">
           <h5 class="card-title">Only One</h5>
           <p class="card-text">
-            Salida: manzana, flor de azahar de naranjo<br>
-            Corazón: canela, geranio y lavanda<br>
-            Fondo: Vainilla, sandalo cumarina.<br>
             100ml<br>
             <strong>$26000</strong>
           </p>
-          <a href="#" class="btn btn-light text-dark border">Agregar al carrito</a>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-outline-dark btn-sm flex-fill me-1"
+              onclick="abrirSubtarjeta(event, 
+                'manzana, flor de azahar de naranjo y bergamota', 
+                'canela, clavos de olor, cardomomo, geranio y lavanda', 
+                'Vainilla, sandalo cumarina, cedro y vetiver')">Ver detalles</a>
+            <a href="carrito.html" class="btn btn-outline-dark btn-sm flex-fill ms-1">Agregar al carrito</a>
+          </div>
         </div>
       </div>
       <div class="card" style="width: 18rem;">
@@ -170,13 +204,17 @@
         <div class="card-body">
           <h5 class="card-title">Épico</h5>
           <p class="card-text">
-            Salida: bergamota, limon, artemisa.<br>
-            Corazón: cardomono, clavel, orris.<br>
-            Fondo: cuero, coco, musk, patchouly.<br>
             100ml<br>
             <strong>$26000</strong>
           </p>
-          <a href="#" class="btn btn-light text-dark border">Agregar al carrito</a>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-outline-dark btn-sm flex-fill me-1"
+              onclick="abrirSubtarjeta(event, 
+                'bergamota, limon, artemisa, lima brasil', 
+                'cardomono, clavel, orris, rosa de bulgaria', 
+                'cuero, coco, musk, patchouly')">Ver detalles</a>
+            <a href="carrito.html" class="btn btn-outline-dark btn-sm flex-fill ms-1">Agregar al carrito</a>
+          </div>
         </div>
       </div>
       <div class="card" style="width: 18rem;">
@@ -184,13 +222,17 @@
         <div class="card-body">
           <h5 class="card-title">He</h5>
           <p class="card-text">
-            Salida: lima acida, jenjibre.<br>
-            Corazón: cardamomo, manzana.<br>
-            Fondo: vetiver de haiti, haba tonka, amberwood.<br>
             100ml<br>
             <strong>$26000</strong>
           </p>
-          <a href="#" class="btn btn-light text-dark border">Agregar al carrito</a>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-outline-dark btn-sm flex-fill me-1"
+              onclick="abrirSubtarjeta(event, 
+                'lima acida, jenjibre, lavanda,menta', 
+                'cardamomo guatemalteco, enebro de virginia, manzana, geranio', 
+                'vetiver de haiti, haba tonka, amberwood')">Ver detalles</a>
+            <a href="carrito.html" class="btn btn-outline-dark btn-sm flex-fill ms-1">Agregar al carrito</a>
+          </div>
         </div>
       </div>
     </div>
@@ -202,13 +244,17 @@
         <div class="card-body">
           <h5 class="card-title">Pura</h5>
           <p class="card-text">
-            Salida: naranja, Bergamota de Calabria y limón siciliano.<br>
-            Corazón: frutas.<br>
-            Fondo: almizcle blanco, vainilla de Madagascar y ámbar.<br>
             100ml<br>
             <strong>$35000</strong>
           </p>
-          <a href="#" class="btn btn-light text-dark border">Agregar al carrito</a>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-outline-dark btn-sm flex-fill me-1"
+              onclick="abrirSubtarjeta(event, 
+                'frutas cítricas, naranja, bergamola, limón siciliano', 
+                'frutas dulces, melón, manzana, frutas tropicales', 
+                'almizcle blanco, vainilla de Madagascar, ámbar')">Ver detalles</a>
+            <a href="carrito.html" class="btn btn-outline-dark btn-sm flex-fill ms-1">Agregar al carrito</a>
+          </div>
         </div>
       </div>
       <div class="card" style="width: 18rem;">
@@ -216,13 +262,17 @@
         <div class="card-body">
           <h5 class="card-title">Exodo</h5>
           <p class="card-text">
-            Salida: pimienta negra, especias y naranja sanguina.<br>
-            Corazón: lavanda y flor de azar del naranjo.<br>
-            Fondo: ámbar, almizcle, sándalo.<br>
             100ml<br>
             <strong>$35000</strong>
           </p>
-          <a href="#" class="btn btn-light text-dark border">Agregar al carrito</a>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-outline-dark btn-sm flex-fill me-1"
+              onclick="abrirSubtarjeta(event, 
+                'pimienta negra, naranja sanguina y especias', 
+                'lavanda y flor de Azahar', 
+                'ámbar, haba lanka, almizcle, sándalo y notas amaderadas')">Ver detalles</a>
+            <a href="carrito.html" class="btn btn-outline-dark btn-sm flex-fill ms-1">Agregar al carrito</a>
+          </div>
         </div>
       </div>
     </div>
@@ -234,13 +284,17 @@
         <div class="card-body">
           <h5 class="card-title">Woman In Black</h5>
           <p class="card-text">
-            Salida: almendra, arandano, tamarindo.<br>
-            Corazón: rosa, violeta y cacao.<br>
-            Fondo: sandalo, madera de masoia.<br>
             100ml<br>
             <strong>$33000</strong>
           </p>
-          <a href="#" class="btn btn-light text-dark border">Agregar al carrito</a>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-outline-dark btn-sm flex-fill me-1"
+              onclick="abrirSubtarjeta(event, 
+                'almendra, arandano, pimienta rosa y tamarindo', 
+                'rosa, violeta negra y cacao', 
+                'sandalo, madera de masoia y vaina de vainilla negra')">Ver detalles</a>
+            <a href="carrito.html" class="btn btn-outline-dark btn-sm flex-fill ms-1">Agregar al carrito</a>
+          </div>
         </div>
       </div>
       <div class="card" style="width: 18rem;">
@@ -248,19 +302,32 @@
         <div class="card-body">
           <h5 class="card-title">Man In Black</h5>
           <p class="card-text">
-            Salida: tabaco, especias y ron.<br>
-            Corazón: cuero, nardo e iris.<br>
-            Fondo: madera de gaiac, benjui y hada tonka.<br>
             100ml<br>
             <strong>$33000</strong>
           </p>
-          <a href="#" class="btn btn-light text-dark border">Agregar al carrito</a>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-outline-dark btn-sm flex-fill me-1"
+              onclick="abrirSubtarjeta(event, 
+                'tabaco, especias y ron', 
+                'cuero, nardo e iris', 
+                'madera de gaiac, benjui y hada tonka')">Ver detalles</a>
+            <a href="carrito.html" class="btn btn-outline-dark btn-sm flex-fill ms-1">Agregar al carrito</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
+<!-- Subtarjetas - Overlay -->
+<div id="subtarjeta-overlay" class="subtarjeta-overlay d-none">
+  <div class="subtarjeta-content">
+    <button class="subtarjeta-close" onclick="cerrarSubtarjeta()">×</button>
+    <h5 class="subtarjeta-title" id="subtarjeta-title">Notas</h5>
+    <p id="subtarjeta-salida"><strong>Salida:</strong> </p>
+    <p id="subtarjeta-corazon"><strong>Corazón:</strong> </p>
+    <p id="subtarjeta-fondo"><strong>Fondo:</strong> </p>
+  </div>
+</div>
 </main>
 <!-- FOOTER -->
 <footer class="footer">
@@ -275,6 +342,7 @@
       <a href="mailto:tuemail@ejemplo.com"><i class="bi bi-envelope-fill"></i></a>
     </div>
   </div>
+</footer>
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="app.js"></script>
