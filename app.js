@@ -2,14 +2,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const toggleButton = document.getElementById("menu-toggle");
   const menu = document.getElementById("navbarMenu");
 
-  // Toggle para mostrar/ocultar menú
   toggleButton.addEventListener("click", function () {
     menu.classList.toggle("show");
   });
 
-  // Cerrar el menú al hacer clic en cualquier enlace del menú
   const navLinks = menu.querySelectorAll("a");
-
   navLinks.forEach(link => {
     link.addEventListener("click", () => {
       if (menu.classList.contains("show")) {
@@ -17,7 +14,61 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  fetch("productos.json")
+    .then(res => res.json())
+    .then(data => {
+      renderizarProductosPorCategoria(data);
+      window.productosData = data; // Guardamos para uso global
+    })
+    .catch(err => console.error("Error al cargar productos:", err));
+
+  actualizarBadge();
+
+  if (document.body.classList.contains("carrito-page")) {
+    renderizarCarrito();
+  }
 });
+
+// ---------- PRODUCTOS ----------
+function renderizarProductosPorCategoria(productos) {
+  productos.forEach(p => {
+    const contenedorId = {
+      femenina: "productos-femeninas",
+      masculina: "productos-masculinas",
+      unisex: "productos-unisex",
+      premium: "productos-premium"
+    }[p.categoria];
+
+    if (contenedorId) {
+      const contenedor = document.getElementById(contenedorId);
+      const card = document.createElement("div");
+      card.className = "card";
+      card.style.width = "18rem";
+
+      card.innerHTML = `
+        <img src="${p.imagen}" class="card-img-top" alt="${p.nombre}">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">${p.nombre}</h5>
+          <p class="card-text mb-3">
+            100ml<br>
+            <strong>$${p.precio}</strong>
+          </p>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-outline-dark btn-sm flex-fill me-1"
+              onclick="abrirSubtarjeta(event, 
+                '${p.salida}',
+                '${p.corazon}',
+                '${p.fondo}')">Ver detalles</a>
+            <a href="#" class="btn btn-outline-dark btn-sm flex-fill ms-1"
+              onclick="agregarAlCarrito('${p.id}')">Agregar al carrito</a>
+          </div>
+        </div>
+      `;
+      contenedor.appendChild(card);
+    }
+  });
+}
 
 function abrirSubtarjeta(event, salida, corazon, fondo) {
   event.preventDefault();
@@ -31,3 +82,81 @@ function cerrarSubtarjeta() {
   document.getElementById('subtarjeta-overlay').classList.add('d-none');
 }
 
+// ---------- CARRITO ----------
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+function guardarCarrito() {
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+}
+
+function actualizarBadge() {
+  const badge = document.getElementById("cart-count");
+  if (badge) {
+    badge.textContent = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+  }
+}
+
+function agregarAlCarrito(idProducto) {
+  const producto = (window.productosData || []).find(p => p.id === idProducto);
+  if (!producto) return;
+
+  const existe = carrito.find(p => p.id === producto.id);
+  if (existe) {
+    existe.cantidad++;
+  } else {
+    carrito.push({ ...producto, cantidad: 1 });
+  }
+
+  guardarCarrito();
+  actualizarBadge();
+  window.location.href = "carrito.html";
+}
+
+function renderizarCarrito() {
+  const tbody = document.querySelector("tbody");
+  const totalElem = document.querySelector(".fs-5 strong");
+  tbody.innerHTML = "";
+
+  let total = 0;
+  carrito.forEach(item => {
+    const subtotal = item.precio * item.cantidad;
+    total += subtotal;
+
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td><img src="${item.imagen}" alt="${item.nombre}" style="height: 50px;"></td>
+      <td>${item.nombre}</td>
+      <td><input type="number" class="form-control cantidad-input" value="${item.cantidad}" min="1" style="width: 70px;" data-id="${item.id}"></td>
+      <td>$${item.precio}</td>
+      <td>$${subtotal}</td>
+      <td><button class="btn btn-outline-danger btn-sm btn-eliminar" data-id="${item.id}"><i class="bi bi-trash"></i></button></td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  totalElem.textContent = `Total: $${total}`;
+
+  document.querySelectorAll(".cantidad-input").forEach(input => {
+    input.addEventListener("change", e => {
+      const id = e.target.dataset.id;
+      const nuevoValor = parseInt(e.target.value);
+      const prod = carrito.find(p => p.id === id);
+      if (prod && nuevoValor >= 1) {
+        prod.cantidad = nuevoValor;
+        guardarCarrito();
+        renderizarCarrito();
+        actualizarBadge();
+      }
+    });
+  });
+
+  document.querySelectorAll(".btn-eliminar").forEach(btn => {
+    btn.addEventListener("click", e => {
+      const id = e.currentTarget.dataset.id;
+      carrito = carrito.filter(p => p.id !== id);
+      guardarCarrito();
+      renderizarCarrito();
+      actualizarBadge();
+    });
+  });
+}
