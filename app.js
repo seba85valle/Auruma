@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(res => res.json())
     .then(data => {
       renderizarProductosPorCategoria(data);
-      window.productosData = data; // Guardamos para uso global
+      window.productosData = data; 
     })
     .catch(err => console.error("Error al cargar productos:", err));
 
@@ -161,3 +161,121 @@ function renderizarCarrito() {
   });
 }
 
+// ---------- FINALIZAR COMPRA ----------
+function finalizarCompra() {
+  if (carrito.length === 0) {
+    // Mostrar modal si el carrito está vacío
+    const vacioModal = new bootstrap.Modal(document.getElementById("carritoVacioModal"));
+    vacioModal.show();
+
+    // Limpiar backdrop si queda colgado al cerrar
+    vacioModal._element.addEventListener("hidden.bs.modal", () => {
+      document.querySelectorAll(".modal-backdrop").forEach(el => el.remove());
+    });
+    return;
+  }
+
+  // Generar código aleatorio de compra
+  const codigo = Math.floor(Math.random() * 900000 + 100000);
+  document.getElementById("codigo-compra").textContent = codigo;
+
+  // Rellenar ticket con los productos del carrito
+  const tbody = document.getElementById("ticket-body");
+  tbody.innerHTML = "";
+  let total = 0;
+
+  carrito.forEach(item => {
+    const subtotal = item.precio * item.cantidad;
+    total += subtotal;
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${item.nombre}</td>
+      <td>${item.cantidad}</td>
+      <td>$${item.precio}</td>
+      <td>$${subtotal}</td>
+    `;
+    tbody.appendChild(tr);
+  });
+
+  document.getElementById("ticket-total").textContent = total;
+
+  // Mostrar el modal con el ticket
+  const compraModal = new bootstrap.Modal(document.getElementById("compraModal"));
+  compraModal.show();
+
+  // Guardar copia del carrito 
+  localStorage.setItem("carrito_backup", JSON.stringify(carrito));
+
+  // Limpiar carrito y actualizar
+  carrito = [];
+  guardarCarrito();
+  actualizarBadge();
+  renderizarCarrito(); // Limpia visualmente la tabla
+}
+
+// ---------- IMPRIMIR TICKET ----------
+function imprimirTicket() {
+  const contenido = document.getElementById("ticket-content").outerHTML;
+  const ventana = window.open("", "PRINT", "height=600,width=800");
+  ventana.document.write(`
+    <html>
+    <head>
+      <title>Ticket de compra</title>
+      <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #fff; color: #000; }
+        .ticket { border: 1px solid #ccc; padding: 10px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ccc; padding: 5px; text-align: left; }
+        th { background: #f8f9fa; }
+      </style>
+    </head>
+    <body>
+      <div class="ticket">
+        ${contenido}
+      </div>
+    </body>
+    </html>
+  `);
+  ventana.document.close();
+  ventana.focus();
+  ventana.print();
+  ventana.close();
+}
+
+// ---------- DESCARGAR TICKET ----------
+function descargarTicket() {
+  const contenido = document.getElementById("ticket-content").outerHTML.replace(
+    /<img[^>]+>/,
+    '<div style="font-size:1.2em;font-weight:bold;">AURUMA Perfumes</div>'
+  );
+
+  const blob = new Blob([`
+    <html>
+    <head>
+      <meta charset="UTF-8">
+      <title>Ticket de compra</title>
+      <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #fff; color: #000; }
+        .ticket { border: 1px solid #ccc; padding: 10px; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { border: 1px solid #ccc; padding: 5px; text-align: left; }
+        th { background: #f8f9fa; }
+      </style>
+    </head>
+    <body>
+      <div class="ticket">
+        ${contenido}
+      </div>
+    </body>
+    </html>
+  `], { type: "text/html" });
+
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `ticket_compra_${Date.now()}.html`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
