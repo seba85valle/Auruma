@@ -16,6 +16,9 @@
 
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="style-carrito.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body class="carrito-page">
   <!-- HEADER -->
@@ -64,6 +67,7 @@
     </ul>
   </div>
 </header>
+
 <main class="carrito-main container py-5">
     <section class="carrito-container bg-white rounded shadow p-4 mt-5">
       <h1 class="fs-3 mb-4" style="font-family: 'Playfair Display', serif;">Carrito de Compras</h1>
@@ -80,18 +84,70 @@
             </tr>
           </thead>
           <tbody>
-              <!-- Las filas del carrito se generan dinámicamente desde el JS -->
+            <!-- Las filas del carrito se generan dinámicamente desde el JS -->
           </tbody>
         </table>
       </div>
       <div class="text-end mt-3">
         <p class="fs-5"><strong>Total: $0</strong></p>
-        <button class="btn btn-dark">Finalizar compra</button>
+        <button class="btn btn-dark" onclick="finalizarCompra()">Finalizar compra</button>
         <a href="productos.html" class="btn btn-outline-dark">Seguir comprando</a>
       </div>
     </section>
-  </main>
 </main>
+
+<!-- Modal Finalizar Compra -->
+<div class="modal fade" id="compraModal" tabindex="-1" aria-labelledby="compraModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="compraModalLabel">¡Gracias por tu compra!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        <p>Podés retirar tu pedido en nuestras oficinas. Si preferís un envío, contactanos por WhatsApp o correo electrónico.</p>
+        <div id="ticket-content" class="p-3 border rounded bg-white">
+          <div class="text-center mb-2">
+            <img src="images/logo.jpg" alt="AURUMA" style="height: 50px;"><br>
+            <strong>AURUMA Perfumes</strong>
+          </div>
+          <p><strong>Código de compra:</strong> <span id="codigo-compra"></span></p>
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Cant.</th>
+                <th>Precio</th>
+                <th>Subtotal</th>
+              </tr>
+            </thead>
+            <tbody id="ticket-body"></tbody>
+          </table>
+          <p class="text-end"><strong>Total:</strong> $<span id="ticket-total"></span></p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="imprimirTicket()">Imprimir ticket</button>
+        <button class="btn btn-dark" onclick="descargarTicket()">Descargar ticket</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Carrito Vacío -->
+<div class="modal fade" id="carritoVacioModal" tabindex="-1" aria-labelledby="carritoVacioModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="carritoVacioModalLabel">Carrito vacío</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div class="modal-body">
+        No hay productos en tu carrito. Agregá al menos uno para finalizar la compra.
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer class="footer mt-auto">
@@ -106,7 +162,7 @@
         <a href="mailto:tuemail@ejemplo.com"><i class="bi bi-envelope-fill"></i></a>
       </div>
     </div>
-
+</footer>
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="app.js"></script>
