@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="AURUMA - Perfumes de alta calidad. Descubrí nuestras fragancias femeninas, masculinas, unisex y premium.">
+  <meta name="keywords" content="perfumes, fragancias, AURUMA, colonias, regalería, aromas, fragancias premium, tienda de perfumes">
+  <meta name="author" content="AURUMA">
+  <meta name="robots" content="index, follow">
+  <title>AURUMA - Perfumes</title>
+  <link rel="shortcut icon" href="images/logo1.png" type="image/x-icon">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet" />
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="styles.css"/>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- HEADER -->
+<header class="bg-white border-bottom px-3 py-2">
+  <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap">
+    
+    <!-- Logo + Nombre -->
+    <div class="d-flex align-items-center">
+      <img src="images/logo.jpg" alt="Logo Auruma" style="height: 36px;" class="me-2" />
+      <span class="fs-5 fw-bold text-dark" style="font-family: 'Playfair Display', serif;">AURUMA</span>
+    </div>
+
+    <!-- Botón hamburguesa -->
+    <button class="d-lg-none btn btn-outline-dark" id="menu-toggle" aria-label="Abrir menú">
+      ☰
+    </button>
+
+    <!-- Navegación -->
+    <ul class="nav" id="navbarMenu">
+      <li class="nav-item">
+        <a class="nav-link text-dark fw-semibold" href="#inicio">Inicio</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark fw-semibold" href="#quienes-somos">Quiénes Somos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark fw-semibold" href="#servicios">Servicios</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark fw-semibold" href="productos.html">Productos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark fw-semibold" href="#reseñas">Reseñas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark fw-semibold" href="#contacto">Contacto</a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<main>
+<!-- SECCIÓN INICIO (Hero Section) -->
+<section id="inicio" class="hero-section text-white text-center d-flex align-items-center justify-content-center">
+  <div class="container">
+    <h2 class="display-5 fw-bold">Descubrí el arte de perfumarte</h2>
+    <p class="lead">Fragancias únicas para momentos inolvidables</p>
+  </div>
+</section>
+
+<!-- SECCIÓN QUIÉNES SOMOS -->
+<section id="quienes-somos" class="quienes-somos py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Conocé más sobre AURUMA</h2>
+    <div class="row">
+      <div class="col-12">
+        <p class="lead">En AURUMA, nos dedicamos a crear perfumes exclusivos que evocan emociones y recuerdos. Nuestra misión es ofrecer fragancias únicas que resalten la belleza de cada persona, con productos de alta calidad y un servicio personalizado.</p>
+        <p>Nos apasiona el mundo de los aromas y buscamos brindarte una experiencia sensorial inolvidable, basada en la elegancia, la sofisticación y el detalle. En AURUMA, cada fragancia tiene una historia que contar, y cada cliente es parte de nuestra historia.</p>
+        <p>El nombre AURUMA nace de la fusión entre las palabras aura y perfume, evocando lo etéreo, lo personal e invisible que nos rodea, y también hace eco del latín aurum, que significa "oro", representando la calidad y el valor de cada esencia. Así, AURUMA simboliza la unión entre lo intangible de un aroma y la riqueza de una experiencia memorable.</p>
+        <p>Además de nuestras fragancias, ofrecemos una línea de productos de cuidado personal pensados para complementar tu bienestar. Desde delicados aceites y cremas aromáticas hasta difusores y esencias para el hogar, cada creación está diseñada para brindar armonía, sofisticación y placer en cada momento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN SERVICIOS -->
+<section id="servicios" class="seccion-servicios py-5">
+  <div class="container text-center">
+    <h2 class="text-white mb-5">Servicios</h2>
+    <div class="row justify-content-center g-4">
+      <div class="col-md-4">
+        <div class="card servicio-card h-100">
+          <div class="card-body">
+            <i class="bi bi-gem fs-1 text-dark"></i>
+            <h5 class="card-title mt-3">Fragancias Personalizadas</h5>
+            <p class="card-text">Diseñamos fragancias únicas, te asesoramos para que encuentres el aroma que mejor represente tu estilo.</p>
+            <div class="badges-contenedor">
+              <span class="badge bg-dark text-white">Aroma exclusivo</span>
+              <span class="badge bg-dark text-white">Asesoramiento 1 a 1</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card servicio-card h-100">
+          <div class="card-body">
+            <i class="bi bi-truck fs-1 text-dark"></i>
+            <h5 class="card-title mt-3">Envíos a Todo el País</h5>
+            <p class="card-text">Realizamos envíos seguros y rápidos para que recibas tu perfume donde estés, con seguimiento incluido.</p>
+            <div class="badges-contenedor">
+              <span class="badge bg-dark text-white">Entrega segura</span>
+              <span class="badge bg-dark text-white">Seguimiento online</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card servicio-card h-100">
+          <div class="card-body">
+            <i class="bi bi-stars fs-1 text-dark"></i>
+            <h5 class="card-title mt-3">Presentación Premium</h5>
+            <p class="card-text">Cada producto viene cuidadosamente presentado, ideal para regalar o disfrutar con estilo y elegancia.</p>
+            <div class="badges-contenedor">
+              <span class="badge bg-dark text-white">Packaging elegante</span>
+              <span class="badge bg-dark text-white">Listo para regalo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN VIDEOS -->
+<section class="video-perfumeria seccion-clara py-5">
+  <div class="container text-center">
+    <h2 class="mb-4">Descubrí más sobre el mundo de las fragancias</h2>
+    <div class="d-flex flex-column flex-md-row justify-content-center gap-4">
+      <div class="ratio ratio-16x9" style="flex: 1;">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/9As3CYh7dkU?si=U0anExQFNfB-dv0r" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="ratio ratio-16x9" style="flex: 1;">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/MnQ-ghUd4z8?si=uNziwJ-iDtnToxe0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN RESEÑAS -->
+<section id="reseñas" class="reseñas-section py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Lo que dicen nuestros clientes</h2>
+    <div class="reseñas-grid">
+      
+      <div class="reseña">
+        <p>"¡Me encantó el perfume! Tiene una fragancia duradera y elegante. Sin dudas volveré a comprar."</p>
+        <div class="estrellas">
+          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+        </div>
+        <div class="autor">Lucía R.</div>
+      </div>
+
+      <div class="reseña">
+        <p>"Excelente atención y asesoramiento. Encontré el aroma ideal para un regalo muy especial."</p>
+        <div class="estrellas">
+          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+        </div>
+        <div class="autor">Carlos M.</div>
+      </div>
+
+      <div class="reseña">
+        <p>"El pedido llegó rapidísimo y en perfectas condiciones. Muy buena presentación del producto."</p>
+        <div class="estrellas">
+          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+        </div>
+        <div class="autor">María G.</div>
+      </div>
+
+      <div class="reseña">
+        <p>"La calidad del perfume es excelente, me dura todo el día. ¡Lo recomiendo totalmente!"</p>
+        <div class="estrellas">
+          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+        </div>
+        <div class="autor">Santiago D.</div>
+      </div>
+
+      <div class="reseña">
+        <p>"Muy buena relación precio-calidad. Me sorprendió gratamente."</p>
+        <div class="estrellas">
+          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>
+        </div>
+        <div class="autor">Florencia A.</div>
+      </div>
+
+      <div class="reseña">
+        <p>"Me asesoraron de forma personalizada y acertaron con lo que buscaba. ¡Gracias!"</p>
+        <div class="estrellas">
+          <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+        </div>
+        <div class="autor">Gabriel L.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECCIÓN CONTACTO -->
+<section id="contacto" class="contacto-section">
+  <div class="container">
+    <h2 class="seccion-titulo">Contacto</h2>
+    <div class="contacto-contenido">
+      
+      <!-- Formulario -->
+      <div class="contact-form">
+        <h3 class="subtitulo-contacto">Formulario</h3>
+        <form action="https://formspree.io/f/xldbpavl" method="POST">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required>
+
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+
+      <!-- Mapa -->
+      <div class="mapa">
+        <h3 class="subtitulo-contacto">Ubicación</h3>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3280.762308146774!2d-58.615322225857945!3d-34.68594800198806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcc6fcda3f3055%3A0x3c25d3a0253a115b!2sLarrazabal%205882%2C%20B1753GLR%20Villa%20Luzuriaga%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1747084328001!5m2!1ses!2sar" 
+          width="100%" 
+          height="100%" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <img src="images/logo.jpg" alt="Logo AURUMA">
+      <span class="fs-5 fw-bold text-dark" style="font-family: 'Playfair Display', serif;">AURUMA</span>
+    </div>
+    <div class="footer-icons">
+      <a href="https://wa.me/tu-numero" target="_blank"><i class="bi bi-whatsapp"></i></a>
+      <a href="https://instagram.com/tu-cuenta" target="_blank"><i class="bi bi-instagram"></i></a>
+      <a href="mailto:tuemail@ejemplo.com"><i class="bi bi-envelope-fill"></i></a>
+    </div>
+  </div>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

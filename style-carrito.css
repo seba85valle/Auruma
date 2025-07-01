@@ -1,0 +1,115 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  background: url('images/fondocarrito1.jpg') no-repeat center top;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+main {
+  flex: 1;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white; 
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.carrito-main {
+  padding-top: 80px;
+  backdrop-filter: blur(3px);
+}
+
+#cart-count {
+  font-size: 0.75rem;
+  min-width: 18px;
+  padding: 2px 5px;
+}
+
+.cantidad-input {
+  max-width: 60px;   /* Limita el ancho */
+  text-align: center; /* Centra el número */
+  padding: 2px 4px;
+}
+
+@media (max-width: 991px) {
+  #navbarMenu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    padding: 1rem;
+  }
+
+  #navbarMenu.show {
+    display: flex;
+  }
+
+  #navbarMenu .nav-link {
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+
+  #menu-toggle {
+    font-size: 1.5rem;
+  }
+}
+
+.footer {
+  background-color: #fff;
+  padding: 20px 40px;
+  border-top: 1px solid #ddd;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.footer-logo img {
+  width: 36px;
+  height: 36px;
+}
+
+.footer-icons a {
+  color: #000;
+  font-size: 1.5rem;
+  margin-left: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-icons a:hover {
+  color: #888;
+}
+
+.table td, .table th {
+  vertical-align: middle;
+}
+
+input[type="number"] {
+  text-align: center;
+}
