@@ -70,19 +70,42 @@
 <section id="inicio" class="hero-section text-white text-center d-flex align-items-center justify-content-center">
   <div class="container">
     <h2 class="display-5 fw-bold">Conocé nuestros Productos</h2>
-    <div class="d-flex justify-content-center mt-4">
-      <a href="#catalogo" class="flecha-bajar"><i class="bi bi-chevron-down"></i></a>
+    <div class="d-flex flex-wrap justify-content-center gap-4">
+      <a class="producto-link" href="#fragancias-femeninas">Fragancias Femeninas</a>
+      <a class="producto-link" href="#fragancias-masculinas">Fragancias Masculinas</a>
+      <a class="producto-link" href="#fragancias-unisex">Fragancias Unisex</a>
+      <a class="producto-link" href="#fragancias-premium">Fragancias Premium</a>
     </div>
   </div>
 </section>
 
-<!-- SECCIÓN PRODUCTOS -->
-<section id="catalogo" class="py-5">
+<!-- SECCIÓN FRAGANCIAS REGULARES -->
+<section id="fragancias-regulares" class="py-5">
   <div class="container">
-    <div id="productos-container" class="d-flex flex-wrap justify-content-center gap-4"></div>
+    <h2 id="fragancias-femeninas" class="text-center mb-4 titulo-seccion">Fragancias Regulares - Femeninas</h2>
+    <div id="productos-femeninas" class="d-flex flex-wrap justify-content-center gap-4"></div>
+
+    <h2 id="fragancias-masculinas" class="text-center my-5 titulo-seccion">Fragancias Regulares - Masculinas</h2>
+    <div id="productos-masculinas" class="d-flex flex-wrap justify-content-center gap-4"></div>
+
+    <h2 id="fragancias-unisex" class="text-center my-5 titulo-seccion">Fragancias Regulares - Unisex</h2>
+    <div id="productos-unisex" class="d-flex flex-wrap justify-content-center gap-4"></div>
+
+    <h2 id="fragancias-premium" class="text-center my-5 titulo-seccion">Fragancias Regulares - Premium</h2>
+    <div id="productos-premium" class="d-flex flex-wrap justify-content-center gap-4"></div>
   </div>
 </section>
 
+<!-- Subtarjetas - Overlay -->
+<div id="subtarjeta-overlay" class="subtarjeta-overlay d-none">
+  <div class="subtarjeta-content">
+    <button class="subtarjeta-close" onclick="cerrarSubtarjeta()">×</button>
+    <h5 class="subtarjeta-title" id="subtarjeta-title">Notas</h5>
+    <p id="subtarjeta-salida"><strong>Salida:</strong> </p>
+    <p id="subtarjeta-corazon"><strong>Corazón:</strong> </p>
+    <p id="subtarjeta-fondo"><strong>Fondo:</strong> </p>
+  </div>
+</div>
 </main>
 <!-- FOOTER -->
 <footer class="footer">
