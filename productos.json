@@ -1,0 +1,122 @@
+[
+  {
+    "id": "shine",
+    "nombre": "Shine Blue",
+    "precio": 26000,
+    "imagen": "images-productos/shine.jpeg",
+    "salida": "manzana, cedro, campanilla y limón siciliano",
+    "corazon": "rosa blanca, bambú y jazmín",
+    "fondo": "ámbar, almizcle y cedro",
+    "categoria": "femenina"
+  },
+  {
+    "id": "ohmygod",
+    "nombre": "Oh My God",
+    "precio": 26000,
+    "imagen": "images-productos/mygod.jpeg",
+    "salida": "pimienta, pomelo, pera",
+    "corazon": "rosa, azahar, jazmin, iris",
+    "fondo": "vainilla, azucar negra, habas de tonka, patchouly",
+    "categoria": "femenina"
+  },
+  {
+    "id": "ohdarling",
+    "nombre": "Oh Darling",
+    "precio": 26000,
+    "imagen": "images-productos/darling.jpeg",
+    "salida": "almendra, café, bergamota y limón (lima ácida)",
+    "corazon": "nardos, jazmín sambac, flor de azahar del naranjo, raíz de lirio y rosa de Bulgaria",
+    "fondo": "haba tonka, cacao, vainilla, praliné, sándalo, almizcle, ámbar, madera de cachemira, canela, pachulí y cedro",
+    "categoria": "femenina"
+  },
+  {
+    "id": "she",
+    "nombre": "She",
+    "precio": 26000,
+    "imagen": "images-productos/she.jpeg",
+    "salida": "jazmin, muguet, ciclamen, ambrette",
+    "corazon": "menta, apolvado, amber gris, vainilla",
+    "fondo": "musk, heliotropo, crema",
+    "categoria": "femenina"
+  },
+  {
+    "id": "maria",
+    "nombre": "Maria",
+    "precio": 26000,
+    "imagen": "images-productos/maria.jpeg",
+    "salida": "mandarina, naranja, notas verdes, bergamota",
+    "corazon": "jazmín, damascencia, cashmeran, petitgrain",
+    "fondo": "patchouly, vetiver, almizcle blanco, madera clara",
+    "categoria": "femenina"
+  },
+  {
+    "id": "onlyone",
+    "nombre": "Only One",
+    "precio": 26000,
+    "imagen": "images-productos/onlyone.jpeg",
+    "salida": "manzana, flor de azahar de naranjo y bergamota",
+    "corazon": "canela, clavos de olor, cardomomo, geranio y lavanda",
+    "fondo": "Vainilla, sandalo cumarina, cedro y vetiver",
+    "categoria": "masculina"
+  },
+  {
+    "id": "epico",
+    "nombre": "Épico",
+    "precio": 26000,
+    "imagen": "images-productos/epico.jpeg",
+    "salida": "bergamota, limon, artemisa, lima brasil",
+    "corazon": "cardomono, clavel, orris, rosa de bulgaria",
+    "fondo": "cuero, coco, musk, patchouly",
+    "categoria": "masculina"
+  },
+  {
+    "id": "he",
+    "nombre": "He",
+    "precio": 26000,
+    "imagen": "images-productos/he.jpeg",
+    "salida": "lima acida, jenjibre, lavanda,menta",
+    "corazon": "cardamomo guatemalteco, enebro de virginia, manzana, geranio",
+    "fondo": "vetiver de haiti, haba tonka, amberwood",
+    "categoria": "masculina"
+  },
+  {
+    "id": "pura",
+    "nombre": "Pura",
+    "precio": 35000,
+    "imagen": "images-productos/pura.jpeg",
+    "salida": "frutas cítricas, naranja, bergamola, limón siciliano",
+    "corazon": "frutas dulces, melón, manzana, frutas tropicales",
+    "fondo": "almizcle blanco, vainilla de Madagascar, ámbar",
+    "categoria": "unisex"
+  },
+  {
+    "id": "exodo",
+    "nombre": "Exodo",
+    "precio": 35000,
+    "imagen": "images-productos/exodo.jpeg",
+    "salida": "pimienta negra, naranja sanguina y especias",
+    "corazon": "lavanda y flor de Azahar",
+    "fondo": "ámbar, haba lanka, almizcle, sándalo y notas amaderadas",
+    "categoria": "unisex"
+  },
+  {
+    "id": "womaninblack",
+    "nombre": "Woman In Black",
+    "precio": 33000,
+    "imagen": "images-productos/womaninblack.webp",
+    "salida": "almendra, arandano, pimienta rosa y tamarindo",
+    "corazon": "rosa, violeta negra y cacao",
+    "fondo": "sandalo, madera de masoia y vaina de vainilla negra",
+    "categoria": "premium"
+  },
+  {
+    "id": "maninblack",
+    "nombre": "Man In Black",
+    "precio": 33000,
+    "imagen": "images-productos/maninsblack.webp",
+    "salida": "tabaco, especias y ron",
+    "corazon": "cuero, nardo e iris",
+    "fondo": "madera de gaiac, benjui y hada tonka",
+    "categoria": "premium"
+  }
+] 
